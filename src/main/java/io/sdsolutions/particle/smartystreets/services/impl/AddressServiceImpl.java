@@ -27,7 +27,7 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public AddressResultDTO checkAddress(AddressInputDTO dto) throws IOException, SmartyException {
+    public AddressResultDTO checkAddress(AddressInputDTO dto) throws IOException, SmartyException, InterruptedException {
         Lookup lookup = getLookupForInput(dto);
         smartyStreetsClient.send(lookup);
 
@@ -35,7 +35,7 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public List<AddressResultDTO> checkAddresses(List<AddressInputDTO> dtos) throws IOException, SmartyException {
+    public List<AddressResultDTO> checkAddresses(List<AddressInputDTO> dtos) throws IOException, SmartyException, InterruptedException {
         Batch batch = new Batch();
         for(AddressInputDTO dto : dtos) {
             batch.add(getLookupForInput(dto));

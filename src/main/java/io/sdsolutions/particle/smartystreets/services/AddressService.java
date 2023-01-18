@@ -10,9 +10,9 @@ import java.util.List;
 
 public interface AddressService {
 
-    AddressResultDTO checkAddress(AddressInputDTO dto) throws IOException, SmartyException;
+    AddressResultDTO checkAddress(AddressInputDTO dto) throws IOException, SmartyException, InterruptedException;
 
-    List<AddressResultDTO> checkAddresses(List<AddressInputDTO> dtos) throws IOException, SmartyException;
+    List<AddressResultDTO> checkAddresses(List<AddressInputDTO> dtos) throws IOException, SmartyException, InterruptedException;
 
     /**
      *  Uses Haversine formula - http://en.wikipedia.org/wiki/Haversine_formula
